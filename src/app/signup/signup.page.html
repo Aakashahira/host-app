@@ -1,0 +1,218 @@
+<ion-content>
+  <ion-grid style="margin:0;padding:0;">
+  <ion-row style="height:20vh;">    
+    <ion-col>
+      <img src="assets/host-01.png" style="display: block; margin-top:10;margin-left:auto;margin-right: auto; width: 50%;">
+  </ion-col> 
+  </ion-row>
+  <ion-row>
+    <ion-col style="margin:0;padding:0;">
+      <ion-card class="setCard" style="margin:0;padding:0;">
+        <ion-card-header>
+          <ion-card-title class="ion-text-center" style="margin-top: 10px; font-weight: bold;">User Info</ion-card-title>
+        </ion-card-header>
+          <ion-row>
+            <div class="center">
+            <form [formGroup] = "signUpForm" (ngSubmit) = "onSubmit()">
+            
+              <ion-item lines = none style="margin: 0 auto;display: block;height: 44px;">
+                <mat-icon color = "primary" matPrefix style="margin-right: 10px;margin-bottom: 5px; background:rgba(219,250,250,0.5);">person</mat-icon>
+               <ion-input placeholder = "Full Name" formControlName = "fullName" style="background:rgba(219,250,250,0.5);font-style: italic;" required></ion-input>
+              </ion-item>
+              <ion-item lines = none style="margin-top:5px; margin-left:auto; margin-right:auto; display:block;height: 44px">
+                <mat-icon color = "primary" matPrefix style="margin-right: 10px;">email</mat-icon>
+                <ion-input type = "email" placeholder="E-mail" required formControlName="email" style="background:rgba(219,250,250,0.5);font-style: italic;"></ion-input>
+              </ion-item>
+              <ion-item lines = none style="margin-top:5px; margin-left:auto; margin-right:auto; display:block;height: 44px">
+                <mat-icon color = "primary" matPrefix style="margin-right: 10px;">lock</mat-icon>
+                <ion-input [type]="hide ? 'password' : 'text'" placeholder="password" required formControlName="password" style ="font-style: italic;"></ion-input>
+                <ion-button fill = "clear" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                  <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </ion-button>
+              </ion-item>
+                 <ion-row>
+                   <ion-col size = "3">
+                      <ion-button [ngClass] = "male()" (click) = "selectGender('male')" size = "small" style = "margin-left:10vw; margin-right:auto; display:block;width: 20vw;height: 44px;"><ion-icon name="man"></ion-icon>Male</ion-button>                     
+                   </ion-col>
+                   <ion-col size = "4">
+                    <ion-button [ngClass] = "female()" (click) = "selectGender('female')"size = "small" style ="margin-left: 4vw;padding-left: 4px; width: 30vw;height: 44px;"><ion-icon name="woman"></ion-icon>Female</ion-button>                     
+                 </ion-col>
+                 <ion-col size = "5" style="height: 44px;"> 
+                  <!-- <ion-datetime placeholder = "Enter DOB" displayFormat="MM/DD/YYYY" min="1994-03-14" max="2012-12-09"></ion-datetime> -->
+                  <mat-form-field style="margin-right: 10vw;margin-left: 7px; width: 30vw;height: 44px;" required>
+                    <mat-label>Choose a date</mat-label>
+                    <input matInput [matDatepicker]="picker" formControlName = "date">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                  </mat-form-field>
+                </ion-col>
+                 </ion-row>
+              <ion-item lines = none style="margin-top:5px; margin-left:auto; margin-right:auto; display:block;height: 44px">
+                <mat-icon color = "primary" matPrefix style="margin-right: 10px;">location_on</mat-icon>
+                <ion-select placeholder="Select City" required formControlName="city"> 
+                  <ion-select-option value="Alice" >Alice</ion-select-option> 
+                  <ion-select-option value="Butterworth">Butterworth</ion-select-option> 
+                  <ion-select-option value="East London">East London</ion-select-option> 
+                  <ion-select-option value="Graaff-Reinet">Graaff-Reinet</ion-select-option> 
+                  <ion-select-option value="Grahamstown">Grahamstown</ion-select-option> 
+                  <ion-select-option value="King William’s Town" >King William’s Town</ion-select-option> 
+                  <ion-select-option value="Mthatha">Mthatha</ion-select-option> 
+                  <ion-select-option value="Port Elizabeth" >Port Elizabeth</ion-select-option> 
+                  <ion-select-option value="Queenstown">Queenstown</ion-select-option> 
+                  <ion-select-option value="Uitenhage">Uitenhage</ion-select-option> 
+                  <ion-select-option value="Zwelitsha">Zwelitsha</ion-select-option> 
+                  <ion-select-option value="Bethlehem">Bethlehem</ion-select-option> 
+                  <ion-select-option value="Jagersfontein">Jagersfontein</ion-select-option> 
+                  <ion-select-option value="Kroonstad">Kroonstad</ion-select-option>
+                  <ion-select-option value="Parys">Parys</ion-select-option>
+                  <ion-select-option value="Phuthaditjhaba">Phuthaditjhaba</ion-select-option>
+                  <ion-select-option value="Virginia">Virginia</ion-select-option>
+                  <ion-select-option value="Welkom">Welkom</ion-select-option>
+                  <ion-select-option value="Benoni">Benoni</ion-select-option>
+                  <ion-select-option value="Boksburg">Boksburg</ion-select-option>
+                  <ion-select-option value="Brakpan">Brakpan</ion-select-option>
+                  <ion-select-option value="Carletonville">Carletonville</ion-select-option>
+                  <ion-select-option value="Germiston">Germiston</ion-select-option>
+                  <ion-select-option value="Johannesburg">Johannesburg</ion-select-option>
+                  <ion-select-option value="Krugersdorp">Krugersdorp</ion-select-option>
+                  <ion-select-option value="Pretoria">Pretoria</ion-select-option>
+                  <ion-select-option value="Randburg">Randburg</ion-select-option>
+                  <ion-select-option value="Randfontein">Randfontein</ion-select-option>
+                  <ion-select-option value="Roodepoort">Roodepoort</ion-select-option>
+                  <ion-select-option value="Soweto">Soweto</ion-select-option>
+                  <ion-select-option value="Springs">Springs</ion-select-option>
+                  <ion-select-option value="Vanderbijlpark">Vanderbijlpark</ion-select-option>
+                  <ion-select-option value="Vereeniging">Vereeniging</ion-select-option>
+                  <ion-select-option value="Durban">Durban</ion-select-option>
+                  <ion-select-option value="Empangeni">Empangeni</ion-select-option>
+                  <ion-select-option value="Ladysmith">Ladysmith</ion-select-option>
+                  <ion-select-option value="Newcastle">Newcastle</ion-select-option>
+                  <ion-select-option value="Pietermaritzburg">Pietermaritzburg</ion-select-option>
+                  <ion-select-option value="Pinetown">Pinetown</ion-select-option>
+                  <ion-select-option value="Ulundi">Ulundi</ion-select-option>
+                  <ion-select-option value="Umlazi">Umlazi</ion-select-option>
+                  <ion-select-option value="Giyani">Giyani</ion-select-option>
+                  <ion-select-option value="Lebowakgomo">Lebowakgomo</ion-select-option>
+                  <ion-select-option value="Musina">Musina</ion-select-option>
+                  <ion-select-option value="Phalaborwa">Phalaborwa</ion-select-option>
+                  <ion-select-option value="Polokwane">Polokwane</ion-select-option>
+                  <ion-select-option value="Seshego">Seshego</ion-select-option>
+                  <ion-select-option value="Sibasa">Sibasa</ion-select-option>
+                  <ion-select-option value="Thabazimbi">Thabazimbi</ion-select-option>
+                  <ion-select-option value="Emalahleni">Emalahleni</ion-select-option>
+                  <ion-select-option value="Nelspruit">Nelspruit</ion-select-option>
+                  <ion-select-option value="Secunda">Secunda</ion-select-option>
+                  <ion-select-option value="Klerksdorp">Klerksdorp</ion-select-option>
+                  <ion-select-option value="Mahikeng">Mahikeng</ion-select-option>
+                  <ion-select-option value="Mmabatho">Mmabatho</ion-select-option>
+                  <ion-select-option value="Potchefstroom">Potchefstroom</ion-select-option>
+                  <ion-select-option value="Rustenburg">Rustenburg</ion-select-option>
+                  <ion-select-option value="Kimberley">Kimberley</ion-select-option>
+                  <ion-select-option value="Kuruman">Kuruman</ion-select-option>
+                  <ion-select-option value="Port Nolloth">Port Nolloth</ion-select-option>
+                  <ion-select-option value="Bellville">Bellville</ion-select-option>
+                  <ion-select-option value="Cape Town">Cape Town</ion-select-option>
+                  <ion-select-option value="Constantia">Constantia</ion-select-option>
+                  <ion-select-option value="George">George</ion-select-option>
+                  <ion-select-option value="Hopefield">Hopefield</ion-select-option>
+                  <ion-select-option value="Oudtshoorn">Oudtshoorn</ion-select-option>
+                  <ion-select-option value="Paarl">Paarl</ion-select-option>
+                  <ion-select-option value="Simon’s Town">Simon’s Town</ion-select-option>
+                  <ion-select-option value="Stellenbosch">Stellenbosch</ion-select-option>
+                  <ion-select-option value="Swellendam">Swellendam</ion-select-option>
+                  <ion-select-option value="Worcester">Worcester</ion-select-option>
+                </ion-select>
+              </ion-item>
+              <ion-item lines = none style="margin-top:5px; margin-left:auto; margin-right:auto; display:block;height: 44px">
+                <mat-icon color = "primary" matPrefix style="margin-right: 10px;">home</mat-icon>
+                <ion-input rows="6" placeholder="Home address" required formControlName="address"style="background:rgba(219,250,250,0.5);" ></ion-input>
+              </ion-item>
+                <ion-item lines = none style="margin-top:5px; margin-left:auto; margin-right:auto; display:block;height: 44px;background: none;border: none;">
+                  <mat-icon color = "primary" matPrefix style="margin-right: 10px;">local_phone</mat-icon>
+                  <ion-input type = "number" placeholder="+27 123456789" required formControlName="mobileNo"style = "font-style: italic;"></ion-input>
+                </ion-item>
+                <ion-row>
+                  <ion-col class="ion-text-center" class="setBg">
+                   <ion-button type = "submit" shape = "round" style ="color: white;width: 80vw;height: 6vh;" [disabled] = "!signUpForm.valid">
+                        Sign Up
+                   </ion-button>
+                  </ion-col>
+                </ion-row>
+                <ion-row>
+                  <ion-col>
+                    <p class="ion-text-center">Have an account? <u style="color:rgb(53, 87, 208);" (click) = "gotoLogin()">Sign In</u></p>
+                  </ion-col>
+                </ion-row>
+            </form> 
+          </div>            
+        </ion-row>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+</ion-content>
+
+
+
+ <!-- <form [formGroup] = "signUpForm">
+            <mat-form-field appearance="fill" style="width: 80vw;">              
+            <input matInput placeholder="Full Name" required formControlName="fullName" style="margin-bottom:5px;">
+            <mat-icon color = "primary" matPrefix style="margin-right: 10px;margin-bottom: 5px;">person</mat-icon>
+            <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+         <mat-form-field appearance="fill" style="width: 80vw;">              
+          <input matInput placeholder="E-mail" required formControlName="email">
+      
+          <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill" style="width: 80vw;">              
+          <input matInput [type]="hide ? 'password' : 'text'" placeholder="password" required formControlName="password">
+          <mat-icon color = "primary" matPrefix style="margin-right: 10px;">lock</mat-icon>
+          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+            <mat-icon color = "primary">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+          <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+        <ion-row style="width: 80vw;">
+          <ion-col size = "1">
+          </ion-col>
+          <ion-col size = "3">
+           <ion-button size = "small" style="height: 35px;"><ion-icon name="man"></ion-icon>Male</ion-button>
+          </ion-col>
+          <ion-col size = "3">
+            <ion-button size = "small" style="height: 35px; margin-left: 10px;"><ion-icon name="woman"></ion-icon>Female</ion-button>
+          </ion-col>
+          <ion-col size = "1">
+          </ion-col>
+           <ion-col size = "3">
+            <mat-form-field style="width: 32vw;">
+              <mat-label>Choose a date</mat-label>
+              <input matInput [matDatepicker]="picker">
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+           </ion-col>
+        </ion-row>
+        <mat-form-field appearance="fill" style="width: 80vw;">              
+          <input matInput placeholder="city" required formControlName="city">
+          <mat-icon color = "primary" matPrefix style="margin-right: 10px;">location_on</mat-icon>
+          <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill" style="width: 80vw;">              
+          <textarea  matInput placeholder="Home address" required formControlName="address"></textarea>
+          <mat-icon color = "primary" matPrefix style="margin-right: 10px;">home</mat-icon>
+          <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+        <mat-form-field style="width: 80vw;">
+          <input matInput placeholder="+44 123456789" required formControlName="mobileNo">
+          <mat-icon color = "primary" matPrefix style="margin-right: 10px;">local_phone</mat-icon>
+        </mat-form-field>
+        <ion-row>
+          <ion-col class="ion-text-center">
+           <ion-chip style="background-color: rgb(231, 159, 24); color: white;">
+            <ion-label style="margin:0 auto;">Get Started</ion-label>
+           </ion-chip>
+          </ion-col>
+        </ion-row>
+        </form> -->
+        <!-- </div> -->

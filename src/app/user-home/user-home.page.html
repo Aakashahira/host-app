@@ -1,0 +1,147 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      <ion-icon style="margin-right: 3px;" name="home"></ion-icon>
+      Home
+    </ion-title>
+    <!-- <ion-buttons slot="end"> -->
+      <!-- <ion-menu-button></ion-menu-button> -->
+     <!-- </ion-buttons> -->
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row *ngFor = "let i of userInfo">
+      <ion-col>
+  <ion-item lines = none>
+    <ion-avatar slot="start">
+      <img src={{i.item?.profile}}>
+    </ion-avatar>
+    <ion-label>
+      <h3 style="color: rgb(53, 87, 208);">{{i.item?.fullName}}</h3>
+      <p>{{i.item?.city}}</p>
+    </ion-label>
+  </ion-item>
+  </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <ion-item lines = none style="--color: rgb(53,87,208);height: 40px;--background:rgba(219, 250, 250, 0.5)">
+        <mat-icon color = "primary" matPrefix style="margin-right: 10px;">location_on</mat-icon>
+        <ion-select placeholder="Select City" [(ngModel)] = "city"> 
+          <ion-select-option value="Alice" >Alice</ion-select-option> 
+          <ion-select-option value="Butterworth">Butterworth</ion-select-option> 
+          <ion-select-option value="East London">East London</ion-select-option> 
+          <ion-select-option value="Graaff-Reinet">Graaff-Reinet</ion-select-option> 
+          <ion-select-option value="Grahamstown">Grahamstown</ion-select-option> 
+          <ion-select-option value="King William’s Town" >King William’s Town</ion-select-option> 
+          <ion-select-option value="Mthatha">Mthatha</ion-select-option> 
+          <ion-select-option value="Port Elizabeth" >Port Elizabeth</ion-select-option> 
+          <ion-select-option value="Queenstown">Queenstown</ion-select-option> 
+          <ion-select-option value="Uitenhage">Uitenhage</ion-select-option> 
+          <ion-select-option value="Zwelitsha">Zwelitsha</ion-select-option> 
+          <ion-select-option value="Bethlehem">Bethlehem</ion-select-option> 
+          <ion-select-option value="Jagersfontein">Jagersfontein</ion-select-option> 
+          <ion-select-option value="Kroonstad">Kroonstad</ion-select-option>
+          <ion-select-option value="Parys">Parys</ion-select-option>
+          <ion-select-option value="Phuthaditjhaba">Phuthaditjhaba</ion-select-option>
+          <ion-select-option value="Virginia">Virginia</ion-select-option>
+          <ion-select-option value="Welkom">Welkom</ion-select-option>
+          <ion-select-option value="Benoni">Benoni</ion-select-option>
+          <ion-select-option value="Boksburg">Boksburg</ion-select-option>
+          <ion-select-option value="Brakpan">Brakpan</ion-select-option>
+          <ion-select-option value="Carletonville">Carletonville</ion-select-option>
+          <ion-select-option value="Germiston">Germiston</ion-select-option>
+          <ion-select-option value="Johannesburg">Johannesburg</ion-select-option>
+          <ion-select-option value="Krugersdorp">Krugersdorp</ion-select-option>
+          <ion-select-option value="Pretoria">Pretoria</ion-select-option>
+          <ion-select-option value="Randburg">Randburg</ion-select-option>
+          <ion-select-option value="Randfontein">Randfontein</ion-select-option>
+          <ion-select-option value="Roodepoort">Roodepoort</ion-select-option>
+          <ion-select-option value="Soweto">Soweto</ion-select-option>
+          <ion-select-option value="Springs">Springs</ion-select-option>
+          <ion-select-option value="Vanderbijlpark">Vanderbijlpark</ion-select-option>
+          <ion-select-option value="Vereeniging">Vereeniging</ion-select-option>
+          <ion-select-option value="Durban">Durban</ion-select-option>
+          <ion-select-option value="Empangeni">Empangeni</ion-select-option>
+          <ion-select-option value="Ladysmith">Ladysmith</ion-select-option>
+          <ion-select-option value="Newcastle">Newcastle</ion-select-option>
+          <ion-select-option value="Pietermaritzburg">Pietermaritzburg</ion-select-option>
+          <ion-select-option value="Pinetown">Pinetown</ion-select-option>
+          <ion-select-option value="Ulundi">Ulundi</ion-select-option>
+          <ion-select-option value="Umlazi">Umlazi</ion-select-option>
+          <ion-select-option value="Giyani">Giyani</ion-select-option>
+          <ion-select-option value="Lebowakgomo">Lebowakgomo</ion-select-option>
+          <ion-select-option value="Musina">Musina</ion-select-option>
+          <ion-select-option value="Phalaborwa">Phalaborwa</ion-select-option>
+          <ion-select-option value="Polokwane">Polokwane</ion-select-option>
+          <ion-select-option value="Seshego">Seshego</ion-select-option>
+          <ion-select-option value="Sibasa">Sibasa</ion-select-option>
+          <ion-select-option value="Thabazimbi">Thabazimbi</ion-select-option>
+          <ion-select-option value="Emalahleni">Emalahleni</ion-select-option>
+          <ion-select-option value="Nelspruit">Nelspruit</ion-select-option>
+          <ion-select-option value="Secunda">Secunda</ion-select-option>
+          <ion-select-option value="Klerksdorp">Klerksdorp</ion-select-option>
+          <ion-select-option value="Mahikeng">Mahikeng</ion-select-option>
+          <ion-select-option value="Mmabatho">Mmabatho</ion-select-option>
+          <ion-select-option value="Potchefstroom">Potchefstroom</ion-select-option>
+          <ion-select-option value="Rustenburg">Rustenburg</ion-select-option>
+          <ion-select-option value="Kimberley">Kimberley</ion-select-option>
+          <ion-select-option value="Kuruman">Kuruman</ion-select-option>
+          <ion-select-option value="Port Nolloth">Port Nolloth</ion-select-option>
+          <ion-select-option value="Bellville">Bellville</ion-select-option>
+          <ion-select-option value="Cape Town">Cape Town</ion-select-option>
+          <ion-select-option value="Constantia">Constantia</ion-select-option>
+          <ion-select-option value="George">George</ion-select-option>
+          <ion-select-option value="Hopefield">Hopefield</ion-select-option>
+          <ion-select-option value="Oudtshoorn">Oudtshoorn</ion-select-option>
+          <ion-select-option value="Paarl">Paarl</ion-select-option>
+          <ion-select-option value="Simon’s Town">Simon’s Town</ion-select-option>
+          <ion-select-option value="Stellenbosch">Stellenbosch</ion-select-option>
+          <ion-select-option value="Swellendam">Swellendam</ion-select-option>
+          <ion-select-option value="Worcester">Worcester</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <!-- <ion-button expand = "block"><ion-icon style = "margin-right: 3px;"name="location"></ion-icon>{{i.item?.city}}</ion-button> -->
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <ion-toolbar style="--color :silver">
+        <ion-title>
+          Choose Your event
+        </ion-title>
+      </ion-toolbar>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col size = "6">
+       <ion-card style="height: 17vh;" (click) = "gotoWedding()">
+        <img src="assets/wedding.png" style="display: block;margin: 0 auto;margin-top: 20%;"> 
+          <p class="ion-text-center" style="color: black;"> Wedding </p>
+       </ion-card>
+    </ion-col>
+    <ion-col size = "6">
+       <ion-card style="height: 17vh;" (click) = "gotoParty()">
+        <img src="assets/party.png" style="display: block;margin: 0 auto;margin-top: 20%;">
+         <p class="ion-text-center" style="color: black;"> Party </p>
+        </ion-card>
+    </ion-col>
+  </ion-row>
+  <ion-row> 
+    <ion-col size = "6">
+      <ion-card style="height: 17vh;" (click) = "gotoCorporate()">
+        <img src="assets/coorporate.png" style="display: block;margin: 0 auto;margin-top: 20%;">
+          <p class="ion-text-center" style="color: black;">Corporate </p>
+      </ion-card>
+    </ion-col>
+    <ion-col size = "6">
+      <ion-card style="height: 17vh;" (click) = "gotoOthers()">
+        <img src="assets/others.png" style="display: block;margin: 0 auto;margin-top: 20%;">
+         <p class="ion-text-center" style="color: black;">Others </p>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+</ion-content>

@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="ion-text-center">My profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-grid>
+  <ion-row *ngFor = "let i of userInfo">
+    <ion-col>
+      <ion-item lines = none>
+        <ion-avatar slot="start">
+          <img src= "{{i.item.profile}}" (click) = "presentPopover($event)">
+        </ion-avatar>
+        <ion-label>
+          <h3> {{i.item.fullName}} </h3>
+          <p style="color: rgb(53, 87, 208);" (click) = "gotoProfile()"><u> Edit Profile </u></p>
+        </ion-label>
+      </ion-item>
+      </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <ion-list>
+        <ion-item routerLink = "">
+          <ion-icon name="people-circle" style="margin-right: 20px;"></ion-icon>
+          <ion-label>Contacts</ion-label>
+          <ion-icon name="chevron-forward-outline"></ion-icon>
+        </ion-item>
+        <ion-item routerLink="user-appointment">
+          <ion-icon name="alarm" style="margin-right: 20px;"></ion-icon>
+          <ion-label>Appointments</ion-label>
+          <ion-icon name="chevron-forward-outline"></ion-icon>
+        </ion-item>
+        <ion-item routerLink="edit-user-profile">
+          <ion-icon name="settings" style="margin-right: 20px;"></ion-icon>
+          <ion-label>Settings</ion-label>
+          <ion-icon name="chevron-forward-outline"></ion-icon>
+        </ion-item>
+        <ion-item routerLink="contact-us">
+          <ion-icon name="mail" style="margin-right: 20px;"></ion-icon>
+          <ion-label>Contact Us</ion-label>
+          <ion-icon name="chevron-forward-outline"></ion-icon>
+        </ion-item>
+        <ion-item routerLink="about-us">
+          <ion-icon name="information" style="margin-right: 20px;"></ion-icon>
+          <ion-label>About Us</ion-label>
+          <ion-icon name="chevron-forward-outline"></ion-icon>
+        </ion-item>
+        <ion-item lines="none">
+          <ion-chip style="background-color: red;color: white; width: 100px;margin-left: 15px;" (click) = logout()>
+            <ion-icon style="color: white;margin-right: 5px; font-size: large;" name="log-out-outline"></ion-icon>
+          <ion-label style="margin-left: 3px;">Logout</ion-label>
+          </ion-chip>
+        </ion-item>
+
+      </ion-list>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+</ion-content>

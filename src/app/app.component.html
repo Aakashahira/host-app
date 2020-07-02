@@ -1,3 +1,73 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+  <ion-menu menu side = "end">
+    <ion-header>
+       <ion-item lines = none>
+     <ion-icon style="color: white;" slot = end name="chevron-forward-outline" (click) = "openEnd()"></ion-icon>
+       
+    </ion-item>
+      <ion-toolbar style="height: 16vh;">
+        <ion-grid>
+          <ion-row *ngFor = "let i of userInfo">
+            <ion-col size = "5">   
+             <ion-item lines = "none">
+              <ion-avatar>
+               <img src= "{{i.item?.profile}}" (click) ="presentPopover($event)">
+              </ion-avatar>
+             </ion-item>
+            </ion-col>
+            <ion-col>
+              <p style="color: white;margin-bottom: 0;"> {{i.item?.fullName}} </p>        
+              <p style="color: white; font-size: small;margin-top: 0;">(Service Provider)</p>
+              <p style="color: white; font-weight: 400; font-size: small;" (click) = "gotoEdit()"><u>Edit Profile </u></p>
+            </ion-col>
+        </ion-row>
+        </ion-grid>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+        <ion-menu-toggle style="padding:1px;">
+        <ion-item routerLink = "dashboard/tabs/contacts">
+          <ion-icon name="people-circle" style="margin-right: 20px;"></ion-icon>
+          <ion-label>Contacts</ion-label>
+        </ion-item>
+      </ion-menu-toggle>
+ 
+      <ion-menu-toggle style="padding:1px;">
+        <ion-item (click) = "gotoAppointment()">
+          <ion-icon name="alarm" style="margin-right: 20px;"></ion-icon>
+          <ion-label>Appointments</ion-label>
+        </ion-item>
+      </ion-menu-toggle>
+      <ion-menu-toggle style="padding: 1px;">
+        <ion-item routerLink="dashboard/tabs/profile/edit-provider-profile">
+          <ion-icon name="settings" style="margin-right: 20px;"></ion-icon>
+          <ion-label>Settings</ion-label>
+        </ion-item>
+      </ion-menu-toggle>
+      <ion-menu-toggle style="padding:1px;">
+        <ion-item routerLink="dashboard/tabs/contact-us"> 
+          <ion-icon name="mail" style="margin-right: 20px;"></ion-icon>
+          <ion-label>Contact Us</ion-label>
+        </ion-item>
+      </ion-menu-toggle>
+      <ion-menu-toggle style="padding:1px;">
+        <ion-item routerLink="dashboard/tabs/about-us">
+          <ion-icon name="information" style="margin-right: 20px;"></ion-icon>
+          <ion-label>About Us</ion-label>
+        </ion-item>
+      </ion-menu-toggle>
+        <ion-menu-toggle>
+        <ion-item lines="none" (click) = "logOut()">
+            <ion-chip style="background-color: red;color: white; width: 100px;margin-left: 15px;">
+              <ion-icon style="color: white;margin-right: 5px; font-size: large;" name="log-out-outline"></ion-icon>
+            <ion-label style="margin-left: 3px;">Logout</ion-label>
+            </ion-chip>
+          </ion-item>
+      </ion-menu-toggle>
+      </ion-list>
+    </ion-content>
+  
+  </ion-menu>
+  <ion-router-outlet main></ion-router-outlet>
 </ion-app>

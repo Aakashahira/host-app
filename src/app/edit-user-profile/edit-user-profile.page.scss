@@ -1,0 +1,18 @@
+ion-toolbar {
+    --background : rgb(53, 87, 208);
+    --color : white;
+}
+.fullheight {
+    height: 100%;
+    width: 100%;
+  }
+  
+.xc {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  ion-avatar{
+    width: 80px;
+    height: 80px; 
+}

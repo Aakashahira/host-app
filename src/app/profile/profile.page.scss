@@ -1,0 +1,25 @@
+ion-icon {
+    color : rgb(53, 87, 208);
+    }
+    ion-avatar {
+        width: 80px;
+        height: 80px; 
+    }
+    
+    // ion-card {
+    //   border-radius: 10px;
+    // }
+    ion-button {
+      --color: rgb(53,87,208);
+      height: 40px;
+      --background:rgba(219, 250, 250, 0.5);
+    
+    }
+    .addBackground{
+        background-color: rgba(219, 250, 250, 0.5);
+    }
+  ion-card 
+{  border: 3px solid gold;
+   height: 145px;
+   border-radius: 15px;
+}

@@ -1,0 +1,66 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      <ion-icon name="alarm" style="margin-right: 3px;"></ion-icon>
+      Appointment</ion-title>
+
+    <ion-buttons slot="end">
+      <ion-menu-button></ion-menu-button>
+     </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+  <ion-row *ngFor = "let i of appointment">
+    <ion-col>
+      <ion-card style="margin:0;padding: 0;">
+       <ion-card-header style="margin:0;padding: 0;">
+              <ion-row>
+                <ion-col size = "12">
+             <ion-item lines =none style="margin:0;padding: 0;">
+             <ion-avatar slot="start" style="margin-left: 0;">
+               <img src="{{i.profile}}" style="margin-left: 0;">
+             </ion-avatar>
+                <ion-label>
+                 <p style="font-size: large;font-family: 'Times New Roman', Times, serif;font-weight: 500;">{{i.fullName}}</p>
+                 </ion-label>
+                <div class="ion-text-right">
+                 <a href="tel:{{i.mobileNo}}"><ion-icon style="margin-right: 10px;" name="call"></ion-icon> </a> 
+                   
+                </div>
+             </ion-item>
+             </ion-col>
+             </ion-row>
+       </ion-card-header>
+       <ion-card-content style="margin-top: 7px;">
+          <p style="font-size:large;font-weight:normal;font-family: 'Times New Roman', Times, serif;"><em style="margin-right: 17px;font-size:large;font-weight:normal;color: rgb(53, 87, 208);">Email:</em> <em></em> <em>{{i.email}} </em></p>            
+          <p style="font-size:large;font-weight:normal;font-family: 'Times New Roman', Times, serif;"><em style="margin-right: 17px;font-size:large;font-weight:normal;color: rgb(53, 87, 208);">Appointment Date:</em> {{i.item.date | date}}</p>
+          <p style="font-size:large;font-weight:normal;font-family: 'Times New Roman', Times, serif;"><em style="margin-right: 17px;font-size:large;font-weight:normal;color: rgb(53, 87, 208);">Appointment TIme:</em> {{i.item.time}}</p>
+           <ion-card>
+               <ion-card-header>
+                <p style="font-size:large;font-weight:normal;font-family: 'Times New Roman', Times, serif;"><em style="margin-right: 17px;font-size:large;font-weight:normal;color: rgb(53, 87, 208);">Message:</em> </p>
+               </ion-card-header>
+               <ion-card-content>
+                <ion-item lines = none>
+                  <p>{{i.item.message}}</p>
+                </ion-item>
+               </ion-card-content>
+            </ion-card>
+         
+          <!-- <p style="font-size:large;font-weight:bold;font-family: 'Times New Roman', Times, serif;color:red"><em style="margin-right: 17px;font-size:large;font-weight:bold;color: rgb(53, 87, 208);">Approval: </em><em > {{i.item.approval}} </em></p> -->
+          <ion-item>
+            <p style="font-size:large;font-weight:bold;font-family: 'Times New Roman', Times, serif;color:red"><em style="margin-right: 17px;font-size:large;font-weight:bold;color: rgb(53, 87, 208);">Approval: </em></p>
+            <ion-select placeholder="Select One" value ="{{i.item.approval}}" (ionChange) = "onChange(i.key,$event)">
+              <ion-select-option value="pending" style="font-size:large;font-weight:bold;font-family: 'Times New Roman', Times, serif;color:red">Pending</ion-select-option>
+              <ion-select-option value="approve" style="font-size:large;font-weight:bold;font-family: 'Times New Roman', Times, serif;color:red">Approve</ion-select-option>
+              <ion-select-option value="reject" style="font-size:large;font-weight:bold;font-family: 'Times New Roman', Times, serif;color:red">Reject</ion-select-option>
+            </ion-select>
+          </ion-item>
+          
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+  </ion-grid>
+</ion-content>

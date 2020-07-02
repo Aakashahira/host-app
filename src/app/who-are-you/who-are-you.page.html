@@ -1,0 +1,42 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>who-are-you</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content>
+  <ion-grid style="margin:0;padding:0;">
+    <ion-row style="height: 50vh;">
+      <ion-col>
+        <img src="assets/host-01.png" style="display: block; margin-top:30px; margin-left:auto;margin-right: auto; width: 50%;">
+        <p class="ion-text-center" style="padding: 0;margin:0;color: white;">The Event Planning App</p>
+      <p class="ion-text-center" style="color:whitesmoke;font-size: smaller;font-weight:50;">It is a long established fact that a reader will be disctracted</p>
+       <p class="ion-text-center" style="color: lightcyan;font-size: smaller; font-weight:50;">by th readable content</p>  
+    </ion-col> 
+    </ion-row>
+    <ion-row> 
+      <ion-col style="margin:0;padding: 0;">
+        <ion-card style="margin:0;padding:0;" class="setCard">
+          <ion-card-header>
+            <ion-card-title class="ion-text-center" style="margin-top: 25px; font-weight: bold;">Who are You?</ion-card-title>
+          </ion-card-header>
+          <ion-row>
+            <ion-col>
+              <ion-card class = "setClass" style="margin-left:20px" (click) = "gotoSignUp()">
+                <ion-icon name="person" style="display: block; margin-top:30%; margin-left: auto; margin-right: auto;font-size: 64px; color: rgb(44, 44, 179);"></ion-icon>
+               <p class="ion-text-center">User</p>
+              </ion-card>
+            </ion-col>
+            <ion-col>
+              <ion-card class="setClass" style="padding-left: 0;" (click) = "gotoSignUp2()">
+                <img src="assets/Capture.png" style="display: block;margin: 0 auto; margin-top: 30%;">
+               <p class="ion-text-center">Service Provider </p>
+              </ion-card>
+              <!-- margin-top: 30%; margin-left: 27%; -->
+            </ion-col>
+          </ion-row>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>  
+</ion-content>

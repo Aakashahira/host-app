@@ -1,0 +1,69 @@
+ion-content {
+    --background : rgb(53, 87, 208);
+}
+.setCard{
+    border-radius: 50px 50px 0px 0px;
+    // height: 80vh;
+   }
+
+ion-input placeholder {
+    font-style:italic;
+  }
+  // input {
+  //   // margin-bottom: 2px;
+   
+  // }
+  .center {
+    text-align: center;
+    margin: 0 auto;
+    display: block;
+  }
+  ion-button {
+    --background: rgba(219, 250, 250, 0.5);
+    --color : rgb(128, 128, 128);
+  }
+  .setBg ion-button {
+    --background:rgb(231, 159, 24);
+    --color : white;
+  }
+
+
+
+
+  ion-item {
+    --background:rgba(219,250,250,0.5);
+    border: 3px solid rgba(219,250,250,0.5);;
+    border-radius: 7px;
+    width: 80vw;
+  }
+  ion-datetime {
+    background:rgba(219,250,250,0.5);
+    border: 3px solid rgba(219,250,250,0.5);;
+    border-radius: 7px;
+  }
+  ::ng-deep {
+    .mat-form-field{
+      height: 44.85px;
+    }
+    .mat-form-field .mat-form-field-flex{
+      background: rgba(219, 250, 250, 0.5);
+        
+    }
+    .mat-form-field-wrapper {
+      height: 44.85px;
+    }
+    .mat-form-field-flex {
+      height: 44px;
+      margin-top : 5px;
+    }
+  }
+  ::ng-deep .mat-form-field-appearance-fill .mat-form-field-fill {
+    border-radius: 10px;
+    height: 28px;
+    // opacity: 1!important;
+}
+
+::ng-deep .mat-form-field-underline {
+  display: none;
+}
+

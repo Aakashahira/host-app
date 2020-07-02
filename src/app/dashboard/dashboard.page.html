@@ -1,0 +1,37 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>dashboard</ion-title>
+    <ion-buttons slot="end">
+      <ion-menu-button></ion-menu-button>
+     </ion-buttons> 
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content>
+  <ion-tabs>  
+    <ion-fab vertical="bottom" horizontal="center" translucent="true">
+      <ion-fab-button size = "large" style="--background: white;" (click)="goToPictures()">
+        <img src="assets/dashboard.png" style="width: 80px;">
+      </ion-fab-button>
+    </ion-fab>
+    
+    <ion-tab-bar slot="bottom" class="ion-no-border">
+      <ion-tab-button tab="home">
+        <ion-icon name="home"></ion-icon>
+      </ion-tab-button>
+      <ion-tab-button tab="inbox" class="comments">
+        <ion-icon name="chatbubbles"></ion-icon>
+      </ion-tab-button>
+  
+      <svg height="50" viewBox="0 0 100 50" width="100" xmlns="http://www.w3.org/2000/svg"><path d="M100 0v50H0V0c.543 27.153 22.72 49 50 49S99.457 27.153 99.99 0h.01z" fill="red" fill-rule="evenodd"></path></svg>
+  
+      <ion-tab-button tab="search" class="notifs">
+        <ion-icon name="search-outline"></ion-icon>
+      </ion-tab-button>
+      <ion-tab-button tab="profile">
+        <ion-icon name="person"></ion-icon>
+      </ion-tab-button>      
+    </ion-tab-bar>
+  </ion-tabs> 
+  
+</ion-content>

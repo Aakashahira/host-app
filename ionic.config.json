@@ -1,5 +1,7 @@
 {
   "name": "hostApp",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

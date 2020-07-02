@@ -1,0 +1,57 @@
+<ion-content>
+  <ion-grid style="margin:0;padding:0;">
+    <ion-row style="height:25vh;">    
+      <ion-col>
+        <div>
+        <img src="assets/host-01.png" style="display: block; margin-top:5px;margin-bottom: 0; margin-left:auto;margin-right: auto; width: 50%;">
+        <p style="color:white;margin-top: 0;padding: 0;" class="ion-text-center">The Event Planning App</p>
+        </div>
+      </ion-col> 
+    </ion-row>
+    <ion-row>
+      <ion-col style="margin:0;padding:0;">
+        <ion-card class="setCard" style="margin:0;padding:0;">
+          <ion-card-header>
+            <ion-card-title class="ion-text-center" style="margin-top: 10px; font-weight: bold;">Sign In</ion-card-title>
+          </ion-card-header>
+            <ion-row style="margin-top: 20px;">
+              <div class="center">
+              <form [formGroup] = "loginForm" (ngSubmit) = "onSubmit()">
+          
+        
+                <ion-item lines = none style="margin-top:5px; margin-left:auto; margin-right:auto; display:block;height: 44px">
+                  <mat-icon color = "primary" matPrefix style="margin-right: 10px;">email</mat-icon>
+                  <ion-input type = "email" placeholder="E-mail" required formControlName="email" style="background:rgba(219,250,250,0.5);font-style: italic;"></ion-input>
+                </ion-item>
+                <ion-item lines = none style="margin-top:15px; margin-left:auto; margin-right:auto; display:block;height: 44px">
+                  <mat-icon color = "primary" matPrefix style="margin-right: 10px;">lock</mat-icon>
+                  <ion-input [type]="hide ? 'password' : 'text'" placeholder="password" required formControlName="password" style ="font-style: italic;"></ion-input>
+                  <ion-button fill = "clear" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                  </ion-button>
+                </ion-item>
+                 <ion-row>
+                   <ion-col>
+                     <p style="color: rgb(53, 87, 208);" class="ion-text-right"><u>Forgot Password </u></p>
+                   </ion-col>
+                 </ion-row>
+                  <ion-row>
+                    <ion-col class="ion-text-center" class="setBg">
+                     <ion-button type = "submit" shape = "round" style ="color: white;width: 80vw;height: 6vh;" [disabled] = "!loginForm.valid">
+                        Login
+                     </ion-button>
+                    </ion-col>
+                  </ion-row>
+                  <ion-row>
+                    <ion-col>
+                      <p class="ion-text-center" (click) = "gotoSignUp()">Don't have an account? <u style="color:rgb(53, 87, 208);">Sign Up</u></p>
+                    </ion-col>
+                  </ion-row>
+              </form> 
+            </div>            
+          </ion-row>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

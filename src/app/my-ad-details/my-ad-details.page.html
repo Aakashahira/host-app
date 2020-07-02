@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Ad details</ion-title>
+    <ion-buttons slot="end">
+      <ion-icon (click) = "deleteAd()" size = "large" name="trash-outline"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-card>
+          <ion-card-header>
+            <p style="font-size: larger;font-weight:bold;font-family: 'Times New Roman', Times, serif;">{{ad?.title}}</p>
+            <ion-slides scrollbar = true >
+              <ion-slide *ngFor = "let img of image">
+                <img src="{{img}}">
+              </ion-slide>
+              <!-- <ion-slide>
+                <img src="assets/host-4.png">
+              </ion-slide> -->
+            </ion-slides>
+          </ion-card-header>
+          <ion-card-content>
+            <p style="font-size: large;font-weight: bold;color: rgb(53,87,208);">Description:</p>
+            <p>{{ad?.description}}</p>
+            <p style="font-size: large;font-weight: bold;color: rgb(53,87,208);">Price:<em style="color: black;margin-left: 5px;">{{ad?.price}} </em></p>
+               
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

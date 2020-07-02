@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>My appointments</ion-title>
+    <ion-buttons slot = "start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-grid>
+    <ion-row *ngFor = "let i of appointment">
+      <ion-col>
+        <ion-card style="margin:0;padding: 0;">
+         <ion-card-header style="margin:0;padding: 0;">
+                <ion-row>
+                  <ion-col size = "12">
+               <ion-item lines =none style="margin:0;padding: 0;">
+               <ion-avatar slot="start" style="margin-left: 0;">
+                 <img src="{{i.profile}}" style="margin-left: 0;">
+               </ion-avatar>
+                  <ion-label>
+                   <p style="font-size: large;font-family: 'Times New Roman', Times, serif;font-weight: 500;">{{i.fullName}}</p>
+                   </ion-label>
+                  <div class="ion-text-right">
+                   <a href="tel:{{i.mobileNo}}"><ion-icon style="margin-right: 10px;" name="call"></ion-icon> </a> 
+                     <ion-icon name="chatbox-ellipses"></ion-icon>
+                  </div>
+               </ion-item>
+               </ion-col>
+               </ion-row>
+         </ion-card-header>
+         <ion-card-content style="margin-top: 7px;">
+            <p style="font-size:large;font-weight:normal;font-family: 'Times New Roman', Times, serif;"><em style="margin-right: 17px;font-size:large;font-weight:normal;color: rgb(53, 87, 208);">Company:</em> <em></em> <em>{{i.company}} </em></p>            
+            <p style="font-size:large;font-weight:normal;font-family: 'Times New Roman', Times, serif;"><em style="margin-right: 17px;font-size:large;font-weight:normal;color: rgb(53, 87, 208);">Address: </em> <em>{{i.address}}</em></p>
+            <p style="font-size:large;font-weight:normal;font-family: 'Times New Roman', Times, serif;"><em style="margin-right: 17px;font-size:large;font-weight:normal;color: rgb(53, 87, 208);">Appointment Date:</em> {{i.item.date | date}}</p>
+            <p style="font-size:large;font-weight:normal;font-family: 'Times New Roman', Times, serif;"><em style="margin-right: 17px;font-size:large;font-weight:normal;color: rgb(53, 87, 208);">Appointment TIme:</em> {{i.item.time}}</p>
+            <p style="font-size:large;font-weight:bold;font-family: 'Times New Roman', Times, serif;color:red"><em style="margin-right: 17px;font-size:large;font-weight:bold;color: rgb(53, 87, 208);">Approval: </em><em > {{i.item.approval}} </em></p>
+            
+            
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    </ion-grid>
+</ion-content>

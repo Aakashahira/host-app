@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Book Appointment</ion-title>
+    <ion-buttons slot = "start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-card style="margin:0;padding: 0;">
+         <ion-card-header style="margin:0;padding: 0;">
+                <ion-row>
+                  <ion-col size = "12">
+               <ion-item lines =none style="margin:0;padding: 0;">
+               <ion-avatar slot="start" style="margin-left: 0;">
+                 <img src="{{image}}" style="margin-left: 0;">
+               </ion-avatar>
+                  <ion-label>
+                   <p style="font-size: large;font-family: 'Times New Roman', Times, serif;font-weight: 500;">{{fullName}}</p>
+                  </ion-label>
+                  <div class="ion-text-right">
+                   <!-- <ion-icon style="margin-right: 13px;" name="image-outline" (click) = "gotoGallery(i.item.userId)"></ion-icon> -->
+                    <a href="tel:{{mobileNo}}"><ion-icon style="margin-right: 10px;" name="call"></ion-icon> </a> 
+                     <ion-icon name="chatbox-ellipses"></ion-icon>
+                  </div>
+               </ion-item>
+               </ion-col>
+               </ion-row>
+         </ion-card-header>
+         <ion-card-content style="margin-top: 7px;">
+            <p style="font-size:large;font-weight:bold;font-family: 'Times New Roman', Times, serif;"><em style="margin-right: 17px;font-size:large;font-weight: bold">Company:</em> <em></em> <em>{{companyName}} </em></p>            
+            <p style="font-size:large;font-weight:bold;font-family: 'Times New Roman', Times, serif;"><em style="margin-right: 17px;font-size:large;font-weight: bold;">Address: </em> <em>{{address}}</em></p>
+            <div class="ion-text-center" style="margin-top: 20px;"> 
+              <p style="color:rgb(53, 87,208);font-style: italic; font-weight: bold;">Select Date and Time For Appointment</p>
+            </div>
+            <form [formGroup] = "appointment" (ngSubmit) = "onSubmit()">
+            <ion-row>
+              <ion-col>
+            <ion-item>
+              <ion-label position="stacked">Select Date</ion-label>
+            <ion-datetime placeholder = "Enter date" formControlName = "date"></ion-datetime>
+            </ion-item>
+            </ion-col>
+            <ion-col>
+            <ion-item>
+              <ion-label position="stacked">Select Time</ion-label>
+            <ion-datetime displayFormat="hh:mm a" placeholder = "Enter Time" formControlName = "time"></ion-datetime>
+            </ion-item>
+            </ion-col>
+            </ion-row>
+            <ion-item>
+              <ion-label position="stacked">Message:</ion-label>
+              <ion-textarea rows = "4" placeholder = "Enter Message here" formControlName = "message"></ion-textarea>
+            </ion-item>
+            <!-- </ion-item> -->
+            <ion-button type = "submit" expand = "block" shape = "round" class="ion-text-center" style="width: 100%;" [disabled] = "!appointment.valid">Submit</ion-button>
+            </form>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    </ion-grid>
+</ion-content>

@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Inbox</ion-title>
+    <ion-buttons slot="end">
+      <ion-spinner name="lines" color="light" *ngIf="!users"></ion-spinner>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-list>
+    <div *ngFor="let user of users">
+      <ion-item (click) = "openChat(user.key)">
+        <ion-avatar *ngIf="user.profile" slot="start">
+          <img src="{{user.profile}}">
+        </ion-avatar>
+        <ion-label>
+          <h2>{{user.fullName}}</h2>
+          <p>{{user.email}}</p>
+        </ion-label>
+      </ion-item> 
+    </div>
+    </ion-list>  
+</ion-content>

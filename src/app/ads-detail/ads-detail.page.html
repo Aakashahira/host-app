@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Ad</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+         <ion-card>
+          <ion-card-header>
+           <p style="font-size: larger;font-weight:bold;font-family: 'Times New Roman', Times, serif;">{{title}}</p>
+             <ion-slides scrollbar = true>
+              <ion-slide *ngFor = "let i of image">
+               <img src="{{i}}">
+               </ion-slide>
+            </ion-slides>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-button style="--background:rgb(53,87,208); --color: white;" shape = round (click) = "BookAppointment()"><ion-icon style="margin-right: 5px;" name="calendar-outline"></ion-icon>Book an Appointment</ion-button>
+            <!-- <ion-row>
+              <ion-col>
+               <ion-button>Call</ion-button>
+              </ion-col>
+              <ion-col>
+                <ion-button>Chat</ion-button>
+              </ion-col>
+              <ion-col>
+              <ion-button>
+                Book an appointment
+              </ion-button>
+              </ion-col>
+            </ion-row> -->
+            <p style="font-size: large;font-weight: bold;color: rgb(53,87,208);">Description:</p>
+            <p>{{description}}</p>
+            </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <!-- <ion-button class="setBottom">Chat</ion-button> -->
+  </ion-grid>
+</ion-content>
+<ion-footer>
+  <ion-button href = "tel:+{{mobileNo}}" color = danger shape = "round" style="float: left;width: 130px; --background:rgb(53,87,208); --color: white"><ion-icon slot="icon-only" name = "call-outline"></ion-icon></ion-button>
+  <ion-button shape = "round" class="ion-text-right" style="float: right;width: 130px;"><ion-icon slot="icon-only" name="chatbubble-ellipses-outline"></ion-icon></ion-button>
+</ion-footer>

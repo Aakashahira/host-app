@@ -1,0 +1,69 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      <ion-icon style="margin-right: 3px;" name="person"></ion-icon>
+      Profile
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-menu-button></ion-menu-button>
+     </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <div *ngIf = "userInfo.length != 0">
+    <ion-row *ngFor = "let i of userInfo">
+      <ion-col>
+  <ion-item lines = none>
+    <ion-avatar slot="start">
+      <img src="{{i.item?.profile}}">
+    </ion-avatar>
+    <ion-label>
+      <h3 style="color: rgb(53, 87, 208);">{{i.item?.fullName}} </h3>
+      <p>(service provider)</p>
+    </ion-label>
+  </ion-item>
+  </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col size = "5" offset = "1" class="addBackground">
+      <ion-icon  size="large" name="call" style="margin: 0 auto; display: block;"></ion-icon>  
+    </ion-col>
+    <ion-col size = "5" offset = "1" class="addBackground">
+      <ion-icon (click) = "gotoInbox()" size="large" name="chatbox-ellipses" style="margin: 0 auto; display: block;"></ion-icon>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col (click) = "gotoInbox()">
+      <p class="ion-text-center" style="font-weight: bold;">0</p>
+      <p class="ion-text-center">Message</p>   
+    </ion-col>
+    <ion-col>
+      <div (click) = "gotoGallery()">
+     <p class="ion-text-center" style="font-weight: bold;">{{photos}}</p>
+     <p class="ion-text-center">Photos</p>
+     </div>
+    </ion-col>
+    <ion-col>
+      <div (click) = "gotoAppointment()">
+      <p class="ion-text-center" style="font-weight: bold;">{{ap}}</p>
+      <p class="ion-text-center">Appointments</p>
+      </div>
+    </ion-col>
+  
+  </ion-row>
+  <ion-row>
+    <ion-col size = "6" *ngFor = "let i of galleryImage">
+      <ion-card>
+        <img src="{{i.image}}">
+      </ion-card>
+    </ion-col>
+  </ion-row>
+  </div>
+  <div *ngIf = "userInfo.length == 0">
+    <ion-spinner></ion-spinner>
+  </div>
+  </ion-grid>
+ 
+</ion-content>

@@ -1,0 +1,71 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      <ion-icon style="margin-right: 3px;" name="home"></ion-icon>
+      Home
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-menu-button></ion-menu-button>
+     </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row *ngFor = "let i of userInfo">
+      <ion-col>
+  <ion-item lines = none>
+    <ion-avatar slot="start">
+      <img src= "{{i.item.profile}}" >
+    </ion-avatar>
+    <ion-label>
+      <h3 style="color: rgb(53, 87, 208);">{{i.item.fullName}}</h3>
+      <p>(service provider)</p>
+    </ion-label>
+  </ion-item>
+  </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <ion-button expand = "block"><ion-icon style = "margin-right: 3px;"name="location"></ion-icon>Choose your region</ion-button>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <ion-toolbar style="--color :silver">
+        <ion-title>
+          Choose Your event
+        </ion-title>
+      </ion-toolbar>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col size = "6">
+       <ion-card style="height: 17vh;" (click) = "gotoCustomers()">
+        <img src="assets/customers.png" style="display: block;margin: 0 auto;margin-top: 20%;"> 
+          <p class="ion-text-center" style="color: black;"> Customers </p>
+       </ion-card>
+    </ion-col>
+    <ion-col size = "6">
+       <ion-card style="height: 17vh;" (click) = "gotoAdPage()">
+        <img src="assets/Ad.png" style="display: block;margin: 0 auto;margin-top: 20%;">
+         <p class="ion-text-center" style="color: black;"> Create Ad </p>
+        </ion-card>
+    </ion-col>
+  </ion-row>
+  <ion-row> 
+    <ion-col size = "6">
+      <ion-card style="height: 17vh;" (click) = "gotoGallery()">
+        <img src="assets/Gallery.png" style="display: block;margin: 0 auto;margin-top: 20%;">
+          <p class="ion-text-center" style="color: black;">Gallery </p>
+      </ion-card>
+    </ion-col> 
+    <ion-col size = "6">
+      <ion-card style="height: 17vh;" (click) = "gotoMyAds()">
+        <img src="assets/Order.png" style="display: block;margin: 0 auto;margin-top: 20%;">
+         <p class="ion-text-center" style="color: black;">My Ads </p>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+</ion-content>

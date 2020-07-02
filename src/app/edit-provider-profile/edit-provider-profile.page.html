@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="ion-text-center">Edit Profile</ion-title>
+    <ion-buttons slot="start">
+      <ion-icon size="large" name="arrow-back-outline" (click) = "gotoProfile()"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row *ngFor = "let i of userInfo">
+      <ion-col>
+  <ion-item lines = none>
+    <ion-avatar slot="start">
+      <img src="{{i.item.profile}}">
+    </ion-avatar>
+    <ion-label>
+      <h3>{{i.item.fullName}} </h3>
+    </ion-label>
+  </ion-item>
+  </ion-col> 
+  </ion-row>
+  </ion-grid>
+<ion-grid> 
+  <ion-row *ngFor = "let i of userInfo"> 
+    <ion-item>
+      <ion-label style ="color:rgb(53, 87, 208); font-weight: bold;font-family: Georgia, 'Times New Roman', Times, serif;" position="fixed">Name:</ion-label>
+      <ion-input value = "{{i.item.fullName}}" readonly></ion-input>
+      <ion-icon style = "color: rgb(53, 87, 208);" name="eyedrop-outline" (click) = "updateName('n')"></ion-icon>
+    </ion-item>
+    <ion-item>
+      <ion-label style="color: rgb(107, 120, 167); font-weight: bold; font-family: Georgia, 'Times New Roman', Times, serif;" position="fixed">Email:</ion-label>
+      <ion-input value = "{{email}}" readonly></ion-input>
+      <ion-icon style = "color: rgb(53, 87, 208);" name="eyedrop-outline" (click) = "updateEmail('e')"></ion-icon>
+    </ion-item>
+    <ion-item>
+      <ion-label style="color: rgb(53, 87, 208); font-weight: bold; font-family: Georgia, 'Times New Roman', Times, serif;"position="fixed">Password:</ion-label>
+      <ion-input type = "password" value = "{{i.item.password}}" readonly></ion-input>
+      <ion-icon style = "color: rgb(53, 87, 208);" name="eyedrop-outline" (click) = "updateEmail('p')"></ion-icon>
+    </ion-item>
+    <ion-item>
+      <ion-label style="color: rgb(53, 87, 208); font-weight: bold; font-family: Georgia, 'Times New Roman', Times, serif;"position="fixed">Company Name:</ion-label>
+      <ion-input value = {{i.item.companyName}} readonly></ion-input>
+      <ion-icon style = "color: rgb(53, 87, 208);" name="eyedrop-outline" (click) = "updateName('co')"></ion-icon>
+    </ion-item>
+    <ion-item>
+      <ion-label style="color: rgb(53, 87, 208); font-weight: bold; font-family: Georgia, 'Times New Roman', Times, serif;"position="fixed">Address:</ion-label>
+      <ion-input value = {{i.item.address}} readonly></ion-input>
+      <ion-icon style = "color: rgb(53, 87, 208);" name="eyedrop-outline" (click) = "updateName('ad')"></ion-icon>
+    </ion-item>
+    <ion-item>
+      <ion-label style="color: rgb(53, 87, 208); font-weight: bold; font-family: Georgia, 'Times New Roman', Times, serif;"position="fixed">City:</ion-label>
+      <ion-input value = {{i.item.city}} readonly></ion-input>
+      <ion-icon style = "color: rgb(53, 87, 208);" name="eyedrop-outline" (click) = "updateName('c')"></ion-icon>
+    </ion-item>
+    <ion-item>
+      <ion-label style="color: rgb(53, 87, 208); font-weight: bold; font-family: Georgia, 'Times New Roman', Times, serif;"position="fixed">Mobile No:</ion-label>
+      <ion-input value = "{{i.item.mobileNo}}" readonly></ion-input>
+      <ion-icon style = "color: rgb(53, 87, 208);" name="eyedrop-outline" (click) = "updateName('m')"></ion-icon>
+    </ion-item>
+  </ion-row>
+</ion-grid>
+</ion-content>
