@@ -7,7 +7,11 @@ import { IonicModule } from '@ionic/angular';
 import { UserLoginPageRoutingModule } from './user-login-routing.module';
 
 import { UserLoginPage } from './user-login.page';
-import { MatFormFieldModule, MatInputModule, MatIconModule, MatDatepickerModule, MatNativeDateModule } from '@angular/material';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   imports: [
